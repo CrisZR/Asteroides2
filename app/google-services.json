@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "842139109833",
+    "firebase_url": "https://asteroides-fe545-default-rtdb.firebaseio.com",
+    "project_id": "asteroides-fe545",
+    "storage_bucket": "asteroides-fe545.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842139109833:android:c7deb2a9a226441a1f8018",
+        "android_client_info": {
+          "package_name": "com.example.asteroides"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhj3dYxrVwKLyhobZ8Kgk41TRM66ZWGV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

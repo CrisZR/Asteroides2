@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tiposGraficos">
+        <item>Vectorial</item>
+        <item>Bitmap</item>
+        <item>Vectorial 3D</item>
+    </string-array>
+    <string-array name="tiposGraficosValores">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="tiposConexion">
+        <item>Bluetooth</item>
+        <item>WI-FI</item>
+        <item>Internet</item>
+    </string-array>
+    <string-array name="tiposConexionValores">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="tiposControles">
+        <item>Pantalla Táctil</item>
+        <item>Sensores</item>
+        <item>Teclado</item>
+    </string-array>
+
+    <string-array name="tiposControlesValores">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+
+</resources>

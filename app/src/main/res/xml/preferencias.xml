@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="preferencias_principal">
+
+    <EditTextPreference
+        android:key="nombre_jugador"
+        android:title="Nombre del jugador"
+        android:summary="Introduce tu nombre para las puntuaciones"
+        android:defaultValue="Jugador" />
+
+    <CheckBoxPreference
+        android:key="musica"
+        android:title="Reproducir música"
+        android:summary="Se reproduce música de fondo"
+        android:defaultValue="true"/>
+
+    <CheckBoxPreference
+        android:key="efectos"
+        android:title="Efectos de sonido"
+        android:summary="Activar los efectos de disparo y explosión"
+        android:defaultValue="true"/>
+    <ListPreference
+        android:key="graficos"
+        android:title="Tipo de gráficos"
+        android:summary="Se escoge la representación de gráficos"
+        android:entries="@array/tiposGraficos"
+        android:entryValues="@array/tiposGraficosValores"
+        android:defaultValue="1"/>
+
+    <EditTextPreference
+        android:key="fragmentos"
+        android:title="Número de Fragmentos"
+        android:summary="En cuantos trozos se divide un asteroide"
+        android:defaultValue="3"/>
+
+    <ListPreference
+        android:key="almacenamiento"
+        android:title="Tipo de almacenamiento"
+        android:summary="Dónde guardar las puntuaciones"
+        android:defaultValue="0"/>
+
+    <ListPreference
+        android:key="controles"
+        android:title="Tipo de control"
+        android:summary="Selecciona el método de control para la nave"
+        android:entries="@array/tiposControles"
+        android:entryValues="@array/tiposControlesValores"
+        android:defaultValue="0"/>
+
+    <PreferenceCategory
+        android:title="Modo Multijugador">
+        <CheckBoxPreference
+            android:key="multiplayer"
+            android:title="Modo multijugador"
+            android:summary="Activar / Desactivar"/>
+        <EditTextPreference
+            android:key="numJugadores"
+            android:title="Número de jugadores"
+            android:summary="Maximo número de jugadores"
+            android:defaultValue="1"/>
+        <ListPreference
+            android:key="conexion"
+            android:title="Tipo de conexión"
+            android:summary="Bluetooth / WI-FI / Internet"
+            android:entries="@array/tiposConexion"
+            android:entryValues="@array/tiposConexionValores"
+            android:defaultValue="0"/>
+    </PreferenceCategory>
+</PreferenceScreen>
