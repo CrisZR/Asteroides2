@@ -18,12 +18,7 @@ import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.PathShape;
 
 import androidx.appcompat.content.res.AppCompatResources;
 
@@ -36,11 +31,22 @@ public class VistaJuego extends View implements SensorEventListener {
     private Grafico nave;
     private int giroNave;
 
+    // constantes públicas para UI (usadas por JuegoActivity)
+    // reusamos las constantes privadas ya definidas abajo
+    public static final int PASO_GIRO_PARA_UI;           // inicializadas en bloque estático abajo
+    public static final float PASO_ACELERACION_PARA_UI;  // inicializadas en bloque estático abajo
+
     private boolean efectosActivados;
     private double aceleracionNave;
     private static final int MAX_VELOCIAD_NAVE = 20;
     private static final int PASO_GIRO_NAVE = 5;
     private static final float PASO_ACELERACION_NAVE = 0.5f;
+    static {
+        // inicializar las constantes públicas a partir de las privadas
+        PASO_GIRO_PARA_UI = PASO_GIRO_NAVE;
+        PASO_ACELERACION_PARA_UI = PASO_ACELERACION_NAVE;
+    }
+
     private int puntuacion = 0;
     private Activity padre;
     public void setPadre(Activity padre){
@@ -84,7 +90,6 @@ public class VistaJuego extends View implements SensorEventListener {
     private int tipoControl;
 
     // //// MULTIMEDIA //////
-
     SoundPool soundPool;
     int idDisparo, idExplosion;
     private SensorManager mSensorManager;
@@ -257,6 +262,9 @@ public class VistaJuego extends View implements SensorEventListener {
                 salir();
             }
         }
+        // forzar redibujado tras actualizar física
+        this.postInvalidate();
+
     }
 
     class ThreadJuego extends Thread {
@@ -351,7 +359,13 @@ public class VistaJuego extends View implements SensorEventListener {
                 misiles.add(misil);
                 tiempoMisiles.add(80);
             }
+            this.postInvalidate();
         }
+    }
+
+    // wrapper público para que la UI pueda disparar
+    public void activaMisilFromUI() {
+        activaMisil();
     }
 
     @Override
@@ -402,6 +416,15 @@ public class VistaJuego extends View implements SensorEventListener {
                 break;
         }
         return procesada;
+    }
+
+    // Métodos públicos usados por la UI (JuegoActivity)
+    public void setGiroNave(int giro) {
+        this.giroNave = giro;
+    }
+
+    public void setAceleracionNave(double aceleracion) {
+        this.aceleracionNave = aceleracion;
     }
 
     private float mX = 0, mY = 0;
