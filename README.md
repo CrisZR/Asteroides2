@@ -1,3 +1,11 @@
+## Ficha del Proyecto
+**Institución:** Universidad Autónoma de Nuevo León (UANL) - Facultad de Ingeniería Mecánica y Eléctrica (FIME)
+**Materia:** Ingeniería de Dispositivos Móviles
+**Proyecto:** Aplicación Móvil "Asteroides"
+**Equipo:** 4 (N3)
+**Versión:** 1.0
+**Nivel de API:** Min SDK 23 (Android 6.0) | Target SDK 36
+
 # Proyecto Integrador de Aprendizaje (PIA): Asteroides
 
 ## Descripción del proyecto
@@ -111,6 +119,8 @@ Este es un proyecto académico, pero si deseas contribuir o proponer mejoras, pu
 5.  Abre un **Pull Request**.
 
 ## Diagramas
+> [!NOTE]
+> Si los siguientes diagramas no se visualizan correctamente en este archivo, se pueden consultar con mayor detalle en el **Manual Técnico** adjunto al proyecto.
 
 ### Diagrama de Arquitectura
 +-----------------------------------------------------------------------+
@@ -197,4 +207,4 @@ El sistema se centra en `VistaJuego`, que gestiona un hilo (`ThreadJuego`) para 
 No es estrictamente necesario. Si no provees este fichero, la opción de persistencia con Firebase no funcionará. Sin embargo, puedes ir a `Preferencias` dentro de la app y seleccionar otro método de almacenamiento (como "Preferencias" o "Fichero interno") para que la app sea completamente funcional.
 
 **¿Qué versión de Android es compatible?**
-El proyecto está configurado para una versión mínima de API 24 (Android 7.0 Nougat), lo que cubre a la gran mayoría de dispositivos activos hoy en día.
+El proyecto está configurado para una versión mínima de API 23 (Android 6.0 Marshmallow), lo que cubre a la gran mayoría de dispositivos activos hoy en día.
